@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="numero"/>
+        <attribute name="authors" value="Luisa"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-22 03:55:59 p.&#8239;m."/>
+        <attribute name="created" value="THVpc2E7TFU7MjAyNi0wNy0yMjswMzoyNjowMiBwLuKAr20uOzEwMzQ0"/>
+        <attribute name="edited" value="THVpc2E7TFU7MjAyNi0wNy0yMjswMzo1NTo1OSBwLuKAr20uOzE7MTA0NjY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero, adivina, intentos" type="Integer" array="False" size=""/>
+            <declare name="seguir" type="Boolean" array="False" size=""/>
+            <assign variable="numero" expression="random(100)"/>
+            <assign variable="intentos" expression="0"/>
+            <assign variable="seguir" expression="true"/>
+            <while expression="true">
+                <input variable="adivina"/>
+                <assign variable="intentos" expression="intentos+1"/>
+                <if expression="adivina &gt; numero">
+                    <then>
+                        <output expression="&quot;muy alto&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="adivina &lt; numero">
+                            <then>
+                                <output expression="&quot;muy bajo&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;&#161;correcto!&quot;" newline="True"/>
+                            </else>
+                        </if>
+                        <assign variable="seguir" expression="false"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;intentos&quot;" newline="True"/>
+            <output expression="intentos" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
